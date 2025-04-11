@@ -5,13 +5,11 @@ import torchvision
 import torchvision.transforms as transforms
 from torchvision import models
 
-# Device setup
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
-# Data transformation and loading
 transform = transforms.Compose([
     transforms.ToTensor(),
-    transforms.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5))  # Normalizing CIFAR-10 images
+    transforms.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5))  
 ])
 
 trainset = torchvision.datasets.CIFAR10(root='./data', train=True, download=True, transform=transform)
@@ -44,7 +42,6 @@ model = ResNetXavier(resnet_model).to(device)
 criterion = nn.CrossEntropyLoss()
 optimizer = optim.Adam(model.parameters(), lr=0.001)
 
-# Training loop
 num_epochs = 10
 for epoch in range(num_epochs):
     running_loss = 0.0
@@ -61,7 +58,6 @@ for epoch in range(num_epochs):
 
     print(f"Epoch {epoch+1}, Loss: {running_loss/len(trainloader):.4f}")
 
-# Evaluation
 correct = 0
 total = 0
 model.eval()
