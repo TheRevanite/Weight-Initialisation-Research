@@ -160,6 +160,34 @@ Final Trials/Different-Datasets-Different-Models/CIFAR-10/CaffeNet_Cifar10.ipynb
 
 **3.1.1.3 GoogleNet_Cifar10.ipynb**
 
+---
+
+## CIFAR-10 Classification using GoogLeNetSmall with Hybrid Initialization
+
+This project implements a lightweight version of GoogLeNet (Inception-style architecture) for image classification on the CIFAR-10 dataset. It uses a custom hybrid weight initialization scheme: He initialization for the first few layers and Orthogonal initialization (with ReLU gain) for the rest.
+
+---
+
+### How to Run
+
+1. Clone the repository or copy the script.
+2. Install the required packages:
+   ```bash
+   pip install torch torchvision matplotlib
+   ```
+3. Run the script:
+   ```bash
+   GoogleNet_Cifar10.ipynb
+   ```
+
+The model will train for 50 epochs on CIFAR-10 using data augmentation and cosine annealing learning rate scheduling. Loss and accuracy plots will be displayed after training.
+
+**DIRECTORY INFO-**
+  ```bash
+   Final Trials/Different-Datasets-Different-Models/CIFAR-10/GoogleNet_Cifar10.ipynb
+   ```
+
+
 
 
 
