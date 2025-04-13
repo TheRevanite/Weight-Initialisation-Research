@@ -119,7 +119,7 @@ Make sure your script file is named `CNN_Cifar10.ipynb` or update the command ac
 Final Trials/Different-Datasets-Different-Models/CIFAR-10/CNN_Cifar10.ipynb
 ```
 **3.1.1.2 CaffeNet_Cifar10.ipynb**
-Here’s a clean and **brief `README.md`** description for your **CaffeNet-based model** using CIFAR-10 with hybrid weight initialization:
+
 
 ---
 
