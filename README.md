@@ -587,18 +587,266 @@ pip install torch torchvision matplotlib
 ```
 ---
 
+**3.1.4.2 ORTH+HE_caffenet_STL10 (1).ipynb**
 
 
 
 
+---
+
+# STL10 Image Classification with AlexNet
+
+This project performs image classification on the STL10 dataset using a modified AlexNet (CaffeNet) architecture in PyTorch. It includes custom weight initialization combining He and Orthogonal methods, and applies standard data preprocessing and augmentation techniques.
+
+## Features
+
+- AlexNet pretrained on ImageNet, adapted for STL10 (10 classes)  
+- Custom weight initialization: He for convolutional layers, Orthogonal for fully connected layers  
+- Input resizing to 224×224 to match AlexNet's input requirement  
+- Accuracy and loss tracking for both training and validation phases  
+- Visualization of learning curves (accuracy and loss)  
+
+## Requirements
+
+- Python 3.8+  
+- PyTorch  
+- torchvision  
+- matplotlib  
+
+Install dependencies:
+
+```bash
+pip install torch torchvision matplotlib
+```
+
+## Steps to Run the Code
+
+1. **Clone the Repository or Copy the Script**  
+   Save the provided Python script to your local machine.
+
+2. **Run the Script**  
+   Execute the script to train and evaluate the model:
+   ```bash
+   python ORTH+HE_caffenet_STL10 (1).ipynb
+   ```
+
+3. **Visualize Learning Curves**  
+   Accuracy and loss over epochs will be automatically plotted after training.
+
+## Notes
+
+- STL10 dataset will be automatically downloaded the first time the script is run.  
+- Training is done using GPU if available.  
+- The final fully connected layer is modified to classify 10 STL10 categories.  
+
+---
 
 
 
+  **DIRECTORY INFO-**
+ ```bash
+  Final Trials/Different-Datasets-Different-Models/QMNIST/ORTH+HE_caffenet_STL10 (1).ipynb
+```
+---
+**3.1.5 SVHN**
+**3.1.5.1 CNN_SVHN.ipynb*
+
+
+---
+
+# SVHN Classification using 9-Layer CNN
+
+This project implements a 9-layer Convolutional Neural Network (CNN) to classify images from the **Street View House Numbers (SVHN)** dataset using PyTorch. SVHN is a real-world image dataset for developing machine learning and object recognition algorithms, obtained from house numbers in Google Street View images.
+
+## Features
+
+- SVHN dataset loading (from `.mat` files or torchvision API)
+- Custom 9-layer CNN architecture
+- Training with Adam optimizer and cross-entropy loss
+- Evaluation on test data to compute accuracy
+
+## Requirements
+
+- Python 3.x
+- PyTorch
+- torchvision
+- scipy (if using `.mat` files directly)
+
+Install required libraries with:
+
+```bash
+pip install torch torchvision
+```
+
+## Steps to Run
+
+1. **Save the code in a Python file** (e.g., `cnn_svhn.py`).
+
+2. **Run the script**:
+
+```bash
+python cnn_svhn.py
+```
+
+3. The SVHN dataset will be downloaded automatically. The model will train for 10 epochs and display the training loss after each epoch and final test accuracy.
+
+## Model Architecture
+
+The 9-layer CNN consists of:
+
+- Three convolutional blocks:
+  - Each with 2 or more Conv2D + ReLU layers
+  - Followed by MaxPooling
+- Fully connected classifier with:
+  - Linear layers
+  - ReLU activation
+  - Dropout
+- Output layer with 10 classes (digits 0–9)
+
+## Dataset Info
+
+SVHN contains over 600,000 digit images (32x32 RGB), split into training and test sets. This script uses the torchvision loader to fetch and normalize the data automatically.
+
+---
+
+
+  **DIRECTORY INFO-**
+ ```bash
+  Final Trials/Different-Datasets-Different-Models/SVHN/CNN_SVHN.ipynb
+```
+---
+**3.1.5.2 ResNet_SVHN.ipynb**
+# SVHN Classification using ResNet Mini
+
+This project implements a ResNet Mini architecture for classifying images from the **SVHN (Street View House Numbers)** dataset. The model is built using PyTorch and uses a custom initialization strategy with Kaiming and Orthogonal initializations. The script trains the model for 50 epochs, evaluates it on the test set, and plots training/validation loss and accuracy.
+
+## Features
+
+- Uses the **SVHN** dataset (downloaded automatically via torchvision).
+- Implements a **ResNet Mini** model with residual blocks.
+- Custom weight initialization using Kaiming and Orthogonal methods.
+- Uses Adam optimizer and Cosine Annealing learning rate scheduler.
+- Tracks training and validation loss/accuracy.
+- Visualizes the training process with loss and accuracy curves.
+
+## Requirements
+
+- Python 3.x
+- PyTorch
+- torchvision
+- matplotlib
+
+Install required libraries with:
+
+```bash
+pip install torch torchvision matplotlib
+```
+
+## Steps to Run
+
+1. **Save the code** in a Python file (e.g., `ResNet_SVHN.ipynb`).
+
+2. **Run the script** using:
+
+```bash
+python ResNet_SVHN.ipynb
+```
+
+3. The SVHN dataset will be automatically downloaded. The model will train for 50 epochs, and both training and validation loss/accuracy will be plotted at the end.
+
+## Model Architecture
+
+- **ResNet Mini** consists of:
+  - Three residual blocks with 2 layers each.
+  - Adaptive Average Pooling followed by a fully connected layer.
+- Custom initialization applied to convolutional and fully connected layers.
+
+## Dataset Info
+
+SVHN is a real-world image dataset containing over 600,000 labeled digits (32x32 RGB) obtained from street view images. This script uses the torchvision loader to fetch and normalize the data automatically.
+
+---
+
+  **DIRECTORY INFO-**
+ ```bash
+  Final Trials/Different-Datasets-Different-Models/SVHN/ResNet_SVHN.ipynb
+```
+---
 
 
 
+**3.1.5.3 VGG_SVHN.ipynb**
 
 
+
+## Description
+
+This repository contains code for training a VGG-like convolutional neural network (CNN) on the SVHN dataset. The model uses a custom weight initialization technique that combines Kaiming Normal initialization for the first few layers and Orthogonal initialization for the deeper layers. The training process utilizes the Adam optimizer and Cosine Annealing Learning Rate Scheduler. The model is evaluated on both training and validation accuracy and loss.
+
+## Requirements
+
+- Python 3.x
+- PyTorch
+- torchvision
+- matplotlib
+
+You can install the required libraries using pip:
+
+```bash
+pip install torch torchvision matplotlib
+```
+
+## Dataset
+
+The model is trained on the **SVHN (Street View House Numbers)** dataset, which is a large collection of labeled digits from real-world images.
+
+The dataset is automatically downloaded when running the code.
+
+## Model
+
+The VGG-like model consists of:
+- Several convolutional layers followed by ReLU activations and Batch Normalization.
+- Max-Pooling layers to down-sample the feature maps.
+- Fully connected layers at the end for classification.
+
+A custom initialization function is applied to the model:
+- The first 6 layers use Kaiming Normal initialization.
+- Subsequent layers use Orthogonal initialization.
+
+## Steps to Run the Code
+
+1. **Prepare the environment** by installing the required dependencies:
+
+   ```bash
+   pip install torch torchvision matplotlib
+   ```
+
+2. **Run the script**:
+
+   ```bash
+   python vgg_svh.py
+   ```
+
+3. The code will:
+   - Download the SVHN dataset.
+   - Initialize the model with custom weights.
+   - Train the model for 50 epochs using the Adam optimizer.
+   - Plot the training/validation loss and accuracy curves after training.
+
+## Model Training and Evaluation
+
+The model is trained for 50 epochs and uses the following hyperparameters:
+
+- **Batch Size**: 128
+- **Learning Rate**: 0.001
+- **Optimizer**: Adam
+- **Learning Rate Scheduler**: Cosine Annealing
+
+**DIRECTORY INFO-**
+ ```bash
+Final Trials/Different-Datasets-Different-Models/SVHN/VGG_SVHN.ipynb
+```
+---
 
 
 
