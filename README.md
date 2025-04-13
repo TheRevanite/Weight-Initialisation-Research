@@ -76,10 +76,9 @@ This repo trains a CNN on the CIFAR-10 dataset using a custom Scaled Uniform wei
    ```
 
 **3. Final Trials**
-3.1 Different-Datasets-Different-Models
+**3.1 Different-Datasets-Different-Models
 3.1.1 CIFAR10
-3.1.1.1 CNN_Cifar10.ipynb
-Got it. Here's a **README.md-style** description and quick usage guide for your 9-layer CNN with hybrid weight initialization on CIFAR-10:
+3.1.1.1 CNN_Cifar10.ipynb**
 
 ---
 
@@ -119,5 +118,48 @@ Make sure your script file is named `CNN_Cifar10.ipynb` or update the command ac
 ```bash
 Final Trials/Different-Datasets-Different-Models/CIFAR-10/CNN_Cifar10.ipynb
 ```
+**3.1.1.2 CaffeNet_Cifar10.ipynb**
+Here’s a clean and **brief `README.md`** description for your **CaffeNet-based model** using CIFAR-10 with hybrid weight initialization:
+
+---
+
+## CaffeNet on CIFAR-10 with Hybrid Initialization
+
+This script implements a modified CaffeNet architecture trained on the CIFAR-10 dataset using PyTorch. A hybrid initialization strategy is applied: **He initialization** for the first 6 layers and **Orthogonal initialization** for the remaining ones.
+
+### Features
+
+- CaffeNet-style deep CNN with dropout regularization
+- CIFAR-10 dataset with standard augmentations
+- Custom hybrid weight initialization (He + Orthogonal)
+- Cosine annealing learning rate scheduler
+- Real-time training/validation plots
+
+### Requirements
+
+- Python 3.8+
+- PyTorch
+- torchvision
+- matplotlib
+
+Install dependencies:
+```bash
+pip install torch torchvision matplotlib
+```
+
+### Run the Training
+
+```bash
+python CaffeNet_Cifar10.ipynb
+```
+
+**DIRECTORY INFO**-
+```bash
+Final Trials/Different-Datasets-Different-Models/CIFAR-10/CaffeNet_Cifar10.ipynb
+```
+
+**3.1.1.3 GoogleNet_Cifar10.ipynb**
+
+
 
 
