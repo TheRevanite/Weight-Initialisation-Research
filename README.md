@@ -849,6 +849,287 @@ Final Trials/Different-Datasets-Different-Models/SVHN/VGG_SVHN.ipynb
 ---
 
 
+**3.2 ORTH+HE-CNN-CIFAR100**
+**3.2.1 cifar100(orth+he).ipynb**
+
+
+
+## Description
+
+This repository contains code to train a custom convolutional neural network (CNN) on the CIFAR-100 dataset. The network is composed of multiple convolutional layers followed by fully connected layers. The custom CNN model uses orthogonal initialization for the weights and is optimized using the Adam optimizer with a cross-entropy loss function. The code trains the model and evaluates its accuracy on the CIFAR-100 test set.
+
+## Requirements
+
+- Python 3.x
+- PyTorch
+- torchvision
+
+You can install the required libraries using pip:
+
+```bash
+pip install torch torchvision
+```
+
+## Dataset
+
+The model is trained on the **CIFAR-100** dataset, which consists of 100 different classes of images with 60,000 32x32 color images. The dataset is automatically downloaded when running the code.
+
+## Model
+
+The custom CNN model architecture consists of:
+- Several convolutional layers followed by ReLU activations.
+- Max-pooling layers for down-sampling.
+- An adaptive average pooling layer.
+- Fully connected layers for classification into 100 classes.
+
+A custom weight initialization function is used:
+- The weights of convolutional and fully connected layers are initialized using orthogonal initialization.
+
+## Steps to Run the Code
+
+1. **Prepare the environment** by installing the required dependencies:
+
+   ```bash
+   pip install torch torchvision
+   ```
+
+2. **Run the script**:
+
+   ```bash
+   python custom_cnn_cifar100.py
+   ```
+
+3. The code will:
+   - Download the CIFAR-100 dataset.
+   - Initialize the model with custom weights.
+   - Train the model for 10 epochs using the Adam optimizer.
+   - Display the loss and accuracy for each epoch.
+
+## Model Training and Evaluation
+
+The model is trained for 10 epochs with the following hyperparameters:
+
+- **Batch Size**: 128
+- **Learning Rate**: 0.001
+- **Optimizer**: Adam
+- **Loss Function**: Cross-Entropy Loss
+
+The accuracy of the model is evaluated after each epoch on the test dataset.
+
+**DIRECTORY INFO-**
+```bash
+Final Trials/ORTH+HE-CNN-CIFAR100/cifar100(orth+he).ipynb
+```
+---
+**3.3 ORTH+HE-CNN-QMNIST**
+**3.3.1 ORTH+HE_CNN_QMNIST.ipynb**
+
+
+
+
+
+---
+
+# QMNIST Classification using Custom 9-Layer CNN
+
+This project implements a deep convolutional neural network (CNN) to classify grayscale handwritten digits from the QMNIST dataset using a hybrid weight initialization strategy: **He initialization** for shallow layers and **Orthogonal initialization** for deeper layers.
+
+## Features
+
+- Dataset: QMNIST (extended MNIST)
+- Architecture: 9-layer custom CNN with dynamic shape handling
+- Hybrid Initialization: He + Orthogonal
+- Regularization: L2 (weight decay)
+- Learning Rate Scheduler: Cosine Annealing
+- Evaluation: Training and validation accuracy/loss tracking
+- Visualization: Epoch-wise training/validation loss and accuracy plots
+
+---
+
+## Requirements
+
+- Python 3.8+
+- PyTorch
+- torchvision
+- matplotlib
+
+Install dependencies using:
+
+```bash
+pip install torch torchvision matplotlib
+```
+
+---
+
+## Steps to Run
+
+1. **Clone the Repository** or copy the code into a `.py` file (e.g., `ORTH+HE_CNN_QMNIST.ipynb`).
+
+2. **Run the script**:
+
+```bash
+python ORTH+HE_CNN_QMNIST.ipynb
+```
+
+3. The script will:
+   - Download and preprocess the QMNIST dataset.
+   - Train the model for 50 epochs.
+   - Track and print training/validation accuracy and loss.
+   - Display performance graphs after training.
+
+---
+
+## Notes
+
+- Model uses grayscale images resized to 32x32.
+- L2 regularization (weight decay) is applied to reduce overfitting.
+- Learning rate is annealed smoothly over epochs using a cosine scheduler.
+
+---
+
+Let me know if you'd like a version in `.md` format or if you're planning to upload this to GitHub and need additional sections like license, contribution, or citation.
+
+**DIRECTORY INFO-**
+```bash
+Final Trials/ORTH+HE-CNN-QMNIST/ORTH+HE_CNN_QMNIST.ipynb
+```
+---
+**3.4 ORTH+HE-CNN-STL10**
+**3.4.1 stl10(orth+he).ipynb**
+
+
+
+
+---
+
+# STL-10 Image Classification using CNN
+
+This project implements a deep Convolutional Neural Network (CNN) using PyTorch to classify images from the [STL-10 dataset](https://cs.stanford.edu/~acoates/stl10/). It features custom weight initialization, data augmentation, validation tracking, test accuracy evaluation, learning rate scheduling, and early stopping.
+
+## Model Overview
+
+- 3 Convolutional blocks (64 → 128 → 256 channels)
+- Batch Normalization & ReLU activations
+- MaxPooling and Dropout for regularization
+- Fully Connected Classifier with Dropout
+- Custom weight initialization (He/Kaiming Normal)
+
+## Dataset
+
+- **STL-10**: Contains 10 classes of color images (96x96), suitable for unsupervised feature learning and image classification.
+- Training split: 80% training, 20% validation
+- Preprocessing includes resize, normalization, and data augmentation (horizontal flip)
+
+## Requirements
+
+- Python 3.x
+- PyTorch
+- torchvision
+- matplotlib
+
+Install dependencies using pip:
+
+```bash
+pip install torch torchvision matplotlib
+```
+
+## How to Run
+
+1. **Clone the repository** or copy the code.
+2. **Run the script** directly to start training:
+
+```bash
+python your_script_name.py
+```
+
+3. The model will:
+   - Train with early stopping
+   - Save the best model to `best_model.pt`
+   - Plot training loss, validation accuracy, and test accuracy
+
+## Notes
+
+- Training uses the GPU if available (`torch.cuda.is_available()`).
+- Uses Adam optimizer with learning rate decay and weight decay for regularization.
+- The model architecture and training strategy are optimized specifically for the STL-10 dataset.
+
+---
+
+
+
+
+**DIRECTORY INFO-**
+
+```bash
+Final Trials/ORTH+HE-CNN-STL10/stl10(orth+he).ipynb
+```
+---
+
+
+**3.5 SVHN**
+**3.5.1 Final Trials/SVHN/svhn(orth+he).ipynb**
+
+
+---
+
+# SVHN Classification using Custom 9-Layer CNN
+
+This project implements a deep 9-layer Convolutional Neural Network (CNN) to classify images from the SVHN (Street View House Numbers) dataset. The model is trained using PyTorch with Orthogonal weight initialization scaled by √2, optimized with Adam.
+
+## Dataset
+
+- **SVHN (Street View House Numbers)**  
+  Downloaded automatically via `torchvision.datasets.SVHN`.
+
+## Model Architecture
+
+- 9-layer deep CNN with:
+  - Three convolutional blocks
+  - ReLU activations
+  - MaxPooling and AdaptiveAvgPooling
+  - Fully connected layers
+- Custom weight initialization using Orthogonal + √2 scaling
+
+## Dependencies
+
+- Python 3.x
+- PyTorch
+- torchvision
+- matplotlib (optional, if you plan to add visualizations)
+
+Install dependencies using:
+
+```bash
+pip install torch torchvision
+```
+
+## Steps to Run
+
+1. Clone this repository or copy the code into a Python script.
+2. Run the script to:
+   - Automatically download and preprocess the SVHN dataset.
+   - Train the custom CNN model on the training split.
+   - Evaluate the model on the test split after each epoch.
+
+```bash
+pythonsvhn(orth+he).ipynb**
+```
+
+## Notes
+
+- The model uses GPU (CUDA) if available.
+- Batch size: 128
+- Optimizer: Adam with learning rate 0.001
+- Loss Function: CrossEntropyLoss
+- Number of Epochs: 50
+
+---
+
+**DIRECTORY INFO-**
+```bash
+Final Trials/SVHN/svhn(orth+he).ipynb
+```
+---
 
 
 
