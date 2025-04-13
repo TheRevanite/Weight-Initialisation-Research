@@ -58,3 +58,66 @@ Paste the code into a Python script or Jupyter/Colab notebook and run:
 
 ```bash
 python Initial Trials/Poisson-Mish-CIFAR10.py
+
+
+Here's a shorter version of the `README.md`:
+
+---
+
+# Custom CNN with Scaled Uniform Initialization
+
+This repo trains a CNN on the CIFAR-10 dataset using a custom Scaled Uniform weight initializer in TensorFlow. The model is trained for 3 epochs with ReLU activation and the Adam optimizer.
+
+## Steps to Run
+
+1. **Install dependencies**:
+   ```bash
+   pip install tensorflow matplotlib numpy
+   ```
+
+**3. Final Trials**
+3.1 Different-Datasets-Different-Models
+3.1.1 CIFAR10
+3.1.1.1 CNN_Cifar10.ipynb
+Got it. Here's a **README.md-style** description and quick usage guide for your 9-layer CNN with hybrid weight initialization on CIFAR-10:
+
+---
+
+## 9-Layer CNN on CIFAR-10 with Hybrid Initialization
+
+This repo implements a custom 9-layer CNN model trained on the CIFAR-10 dataset using PyTorch. The model uses **He initialization** for shallow layers and **Orthogonal initialization** for deeper layers to explore hybrid weight initialization strategies.
+
+### Features
+
+- Trains on CIFAR-10 using data augmentation
+- Custom 9-layer CNN architecture
+- Hybrid weight initialization: He (shallow) + Orthogonal (deep)
+- Reports loss and accuracy every epoch
+
+### Requirements
+
+- Python 3.8+
+- PyTorch
+- torchvision
+- matplotlib
+
+Install requirements:
+```bash
+pip install torch torchvision matplotlib
+```
+
+### How to Run
+
+```bash
+python CNN_Cifar10.ipynb
+```
+
+Make sure your script file is named `CNN_Cifar10.ipynb` or update the command accordingly.
+
+---
+**DIRECTORY INFO**-
+```bash
+Final Trials/Different-Datasets-Different-Models/CIFAR-10/CNN_Cifar10.ipynb
+```
+
+
