@@ -397,6 +397,206 @@ The script will:
 ---
 
 
+**3.1.3.3 Final Trials/Different-Datasets-Different-Models/QMNIST/ORTH+HE_googlenet_QMNIST.ipynb**
+
+
+
+---
+
+# QMNIST Classification with GoogleNet
+
+This project uses the GoogleNet architecture to classify handwritten digits from the QMNIST dataset. The grayscale images are resized to 32x32 and converted to 3-channel RGB to be compatible with GoogleNet. The model applies a custom weight initialization strategy: He initialization for convolutional layers and Orthogonal initialization for linear layers.
+
+---
+
+## Requirements
+
+- Python 3.x  
+- PyTorch  
+- torchvision  
+- matplotlib  
+
+Install dependencies with:
+
+```bash
+pip install torch torchvision matplotlib
+```
+
+---
+
+## How to Run
+
+1. Save the code in a Python file (e.g., `qmnist_googlenet.py`).
+2. Run the script:
+
+```bash
+python qmnist_googlenet.py
+```
+
+This will:
+
+- Download and preprocess the QMNIST dataset
+- Apply custom initialization to GoogleNet
+- Train for 10 epochs and validate on a held-out validation set
+- Print final test accuracy
+- Plot training and validation accuracy over epochs
+
+---
+
+## Notes
+
+- Uses GPU if available.
+- Converts QMNIST grayscale images to RGB format.
+- Batch size: 64  
+- Optimizer: Adam  
+- Loss function: CrossEntropyLoss  
+- Dataset is split 90% training, 10% validation.  
+
+---
+
+Let me know if you want this combined with the other readmes into a single multi-model benchmark doc.
+
+  **DIRECTORY INFO-**
+ ```bash
+  Final Trials/Different-Datasets-Different-Models/QMNIST/ORTH+HE_googlenet_QMNIST.ipynb
+```
+---
+
+
+
+
+
+**3.1.3.3 Final Trials/Different-Datasets-Different-Models/QMNIST/orth+he_resnet_qmnist.ipynb**
+
+
+
+
+# QMNIST Classification with ResNet18 (Custom Initialization)
+
+This project implements digit classification on the QMNIST dataset using a modified ResNet18 architecture in PyTorch. It includes a custom weight initialization strategy that combines **He initialization** for convolutional layers and **Orthogonal initialization** for fully connected layers.
+
+## Features
+
+- Uses the **QMNIST** dataset with 32x32 grayscale images.
+- Implements a modified **ResNet18** to handle single-channel inputs.
+- Applies **custom hybrid initialization** (He + Orthogonal).
+- Trains with **Adam optimizer** and **CrossEntropy loss**.
+- Includes validation and test evaluation.
+- Plots training and validation accuracy/loss curves.
+
+## Steps to Run
+
+1. **Install dependencies** (PyTorch, torchvision, matplotlib):
+
+   ```bash
+   pip install torch torchvision matplotlib
+   ```
+
+2. **Run the script**:
+
+   ```bash
+   python orth+he_resnet_qmnist.ipynb.py
+   ```
+
+3. The script will:
+   - Download the QMNIST dataset.
+   - Train ResNet18 for 10 epochs with custom initialization.
+   - Print accuracy metrics.
+   - Display plots for training/validation accuracy and loss.
+
+
+
+## Notes
+
+- The model is trained on GPU if available, else CPU.
+- No pre-trained weights are used.
+- Custom initialization is applied using `kaiming_normal_` and `orthogonal_`.
+
+---
+
+
+  **DIRECTORY INFO-**
+ ```bash
+  Final Trials/Different-Datasets-Different-Models/QMNIST/orth+he_resnet_qmnist.ipynb
+```
+---
+
+
+
+**3.1.4 STL10**
+
+**3.1.4.1 ORTH+HE-resnet-STL10.ipynb**
+Sure, here's the updated README without the output example:
+
+---
+
+# STL10 Image Classification with Modified ResNet18
+
+This project implements image classification on the STL10 dataset using a modified ResNet18 architecture in PyTorch. It introduces custom weight initialization combining He and Orthogonal methods, includes dropout regularization, and uses Cosine Annealing for learning rate scheduling. The model is trained with data augmentation and evaluated on classification accuracy.
+
+## Features
+
+- Uses ResNet18 with a custom final fully connected layer and dropout  
+- Custom weight initialization: He for shallow layers, Orthogonal for deep layers  
+- Data augmentation with color jittering, random crops, and horizontal flips  
+- Cosine Annealing Learning Rate Scheduler  
+- Training and validation accuracy/loss tracking with visualization  
+
+## Requirements
+
+- Python 3.8+  
+- PyTorch  
+- torchvision  
+- matplotlib  
+
+You can install dependencies via:
+
+```bash
+pip install torch torchvision matplotlib
+```
+
+## Steps to Run the Code
+
+1. **Download the Dataset**  
+   The STL10 dataset will be automatically downloaded the first time you run the code.
+
+2. **Train the Model**  
+   Run the script to start training and evaluation:
+   ```bash
+   python ORTH+HE-resnet-STL10.ipynb
+   ```
+
+3. **Visualize Results**  
+   After training, loss and accuracy curves will be plotted automatically for both training and validation sets.
+
+## Notes
+
+- Resize is applied to downsample STL10 images from 96x96 to 64x64 for compatibility.  
+- Training is performed on GPU if available.  
+- Dropout (p=0.5) is used in the final classifier to reduce overfitting.  
+
+---
+
+
+
+
+
+  **DIRECTORY INFO-**
+ ```bash
+  Final Trials/Different-Datasets-Different-Models/QMNIST/ORTH+HE-resnet-STL10.ipynb
+```
+---
+
+
+
+
+
+
+
+
+
+
+
 
 
 
