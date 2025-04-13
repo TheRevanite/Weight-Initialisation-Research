@@ -188,6 +188,69 @@ The model will train for 50 epochs on CIFAR-10 using data augmentation and cosin
    ```
 
 
+**3.1.1.3 ResNet_Cifar10.ipynb**
+
+
+
+---
+
+## CIFAR-10 Classification using ResNet18 with Hybrid Initialization
+
+This project implements a compact ResNet-style architecture for CIFAR-10 image classification. It uses a hybrid weight initialization strategy: He initialization for early layers and Orthogonal initialization (with ReLU gain) for deeper layers.
+
+---
+
+### How to Run
+
+1. Clone the repository or copy the script.
+2. Install the required dependencies:
+   ```bash
+   pip install torch torchvision matplotlib
+   ```
+3. Run the script:
+   ```bash
+   ResNet_Cifar10.ipynb
+   ```
+
+The model trains on CIFAR-10 for 50 epochs using data augmentation and cosine annealing for learning rate scheduling. It outputs training/validation accuracy and loss curves along with total training time.
+
+**DIRECTORY INFO-**
+```bash
+   Final Trials/Different-Datasets-Different-Models/CIFAR-10/ResNet_Cifar10.ipynb
+   ```
+
+---
+
+**3.1.1.4 VGG_Cifar10.ipynb**
+# CIFAR-10 Classification using VGGLike with Hybrid Initialization
+
+This project implements a compact VGG-like convolutional neural network for CIFAR-10 image classification. It uses a hybrid weight initialization strategy: He initialization for the early layers and Orthogonal initialization (with ReLU gain) for the deeper layers.
+
+## How to Run
+
+Clone the repository or copy the script.
+
+Install the required dependencies:
+
+```bash
+pip install torch torchvision matplotlib
+```
+Run The Script
+```bash
+python VGG_Cifar10.ipynb
+```
+
+**DIRECTORY INFO-**
+```bash
+   Final Trials/Different-Datasets-Different-Models/CIFAR-10/VGG_Cifar10.ipynb
+
+   ```
+
+
+
+
+
+
 
 
 
