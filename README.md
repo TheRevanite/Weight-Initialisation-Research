@@ -247,6 +247,162 @@ python VGG_Cifar10.ipynb
    ```
 
 
+**3.1.2.1-ResNet_Cifar100.ipynb**
+# CIFAR-100 Classification using ResNetMini with Hybrid Initialization
+
+This project implements a compact ResNet-like architecture for CIFAR-100 image classification. The model uses hybrid weight initialization: He initialization for the early layers and Orthogonal initialization (with ReLU gain) for deeper layers.
+
+## Requirements
+
+To run the code, you will need the following Python libraries:
+
+- `torch`
+- `torchvision`
+- `matplotlib`
+
+You can install the required dependencies with:
+
+```bash
+pip install torch torchvision matplotlib
+```
+How To Run
+```bash
+Python ResNet_Cifar100.ipynb
+```
+
+**DRIECTORY INFO-**
+```bash
+Final Trials/Different-Datasets-Different-Models/CIFAR-100/ResNet_Cifar100.ipynb
+```
+
+**3.1.2.2-VGG_Cifar100.ipynb**
+
+
+---
+
+# VGG-like Model on CIFAR-100 Dataset
+
+This project implements a VGG-like CNN model for image classification on the CIFAR-100 dataset using PyTorch. It includes custom weight initialization and training for 50 epochs.
+
+## Steps to Run the Code
+
+1. **Install Dependencies**:
+   Install the necessary libraries using pip:
+   ```bash
+   pip install torch torchvision matplotlib
+   ```
+
+2. **Run the Code**:
+   Run the Python script to train and evaluate the model:
+   ```bash
+   python VGG_Cifar100.ipynb.py
+   ```
+
+3. **View Results**:
+   After training, the training and validation accuracy/loss curves will be plotted. The time taken for training will also be printed in the console.
+
+
+   **DIRECTORY INFO-**
+      ```bash
+   Final Trials/Different-Datasets-Different-Models/CIFAR-100/VGG_Cifar100.ipynb
+   ```
+
+---
+**3.1.3-QMNIST**
+**3.1.3.1-ORTH+HE-Caffenet-QMNIST.ipynb**
+
+---
+
+# CaffeNet on QMNIST Dataset
+
+This project implements the CaffeNet model on the QMNIST dataset (32x32 grayscale images) using PyTorch. The model is trained for 10 epochs with custom weight initialization (He + Orthogonal) and evaluated on the test set.
+
+## Steps to Run the Code
+
+1. **Install Dependencies**:
+   Install the necessary libraries using pip:
+   ```bash
+   pip install torch torchvision matplotlib
+   ```
+
+2. **Run the Code**:
+   Run the Python script to train and evaluate the model:
+   ```bash
+   python ORTH+HE-Caffenet-QMNIST.ipynbpy
+   ```
+
+3. **View Results**:
+   After training, the training and validation accuracy/loss curves will be plotted. The accuracy on the QMNIST test set will be printed in the console.
+   **DIRECTORY INFO-**
+   ```bash
+   Final Trials/Different-Datasets-Different-Models/QMNIST/ORTH+HE-Caffenet-QMNIST.ipynb
+   ```
+
+---
+
+**3.1.3.2-ORTH+HE_CNN_QMNIST.ipynb**
+
+
+---
+
+# QMNIST Classification using Custom 9-Layer CNN
+
+This project uses a custom 9-layer Convolutional Neural Network to classify images from the QMNIST dataset. It applies a hybrid weight initialization strategy: He initialization for the shallow layers and Orthogonal initialization for the deeper ones. The model is trained using CrossEntropyLoss and Adam optimizer, with Cosine Annealing learning rate scheduling and L2 regularization.
+
+---
+
+## Requirements
+
+- Python 3.x  
+- PyTorch  
+- torchvision  
+- matplotlib  
+
+You can install dependencies with:
+
+```bash
+pip install torch torchvision matplotlib
+```
+
+---
+
+## Running the Code
+
+1. Save the script in a Python file (e.g., `ORTH+HE_CNN_QMNIST.ipynb`).
+2. Run the script:
+
+```bash
+python ORTH+HE_CNN_QMNIST.ipynb
+```
+
+The script will:
+- Download and preprocess the QMNIST dataset
+- Initialize the CNN with custom weight initialization
+- Train and validate the model for 50 epochs
+- Plot training/validation loss and accuracy
+
+---
+
+## Notes
+
+- The model uses GPU (CUDA) if available.
+- QMNIST images are resized to 32x32 before training.
+- Training progress and plots will appear after training.
+
+
+  **DIRECTORY INFO-**
+ ```bash
+  Final Trials/Different-Datasets-Different-Models/QMNIST/ORTH+HE_CNN_QMNIST.ipynb
+```
+---
+
+
+
+
+
+
+
+
 
 
 
