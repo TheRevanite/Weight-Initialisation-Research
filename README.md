@@ -1131,6 +1131,193 @@ Final Trials/SVHN/svhn(orth+he).ipynb
 ```
 ---
 
+**4 FINAL**
+**4.1 cifar10(orth+He)-Resnet.py**
+
+:
+
+---
+
+# CIFAR-10 Classification using Custom ResNet with Hybrid Initialization
+
+This project implements a simplified ResNet-like convolutional neural network to classify images from the CIFAR-10 dataset using PyTorch. It includes a hybrid initialization scheme using He (Kaiming) initialization for early layers and Orthogonal initialization for deeper layers.
+
+## Features
+
+- Custom ResNetMini architecture with residual blocks
+- CIFAR-10 dataset with standard data augmentations
+- Cosine annealing learning rate scheduler
+- Hybrid initialization strategy (He + Orthogonal)
+- Accuracy and loss tracking with visual plots
+
+## Requirements
+
+- Python 3.x
+- PyTorch
+- torchvision
+- matplotlib
+
+You can install the dependencies using:
+
+```bash
+pip install torch torchvision matplotlib
+```
+
+## Steps to Run
+
+1. Clone the repository or copy the script.
+
+2. Run the training script:
+
+```bash
+python cifar10(orth+He)-Resnet.py
+```
+
+3. The script will automatically:
+   - Download the CIFAR-10 dataset
+   - Train the custom ResNet model
+   - Display training and validation curves for accuracy and loss
+
+## Notes
+
+- Model is trained for 50 epochs using Adam optimizer.
+- Data augmentation includes random crop and horizontal flip.
+- Results are visualized at the end using matplotlib.
+
+--- 
+
+
+**DIRECTORY INFO-**
+```bash
+Final/cifar10(orth+He)-Resnet.py
+```
+
+**4.2 cifar10(orth+He)-VGG.py**
+
+
+
+
+---
+
+# VGG-like CNN on CIFAR-10
+
+This project trains a custom VGG-style convolutional neural network on the CIFAR-10 dataset using PyTorch. The model utilizes hybrid weight initialization: **He (Kaiming) initialization** for the shallow layers and **Orthogonal initialization** for deeper layers. The training process uses data augmentation, batch normalization, cosine annealing learning rate scheduling, and Adam optimizer.
+
+## Features
+
+- Custom VGG-like CNN architecture
+- Hybrid weight initialization (He + Orthogonal)
+- Data augmentation (random cropping and flipping)
+- Batch normalization
+- Cosine annealing learning rate scheduler
+- CIFAR-10 dataset support
+- Training and validation accuracy/loss plots
+
+## Requirements
+
+- Python 3.x
+- PyTorch
+- torchvision
+- matplotlib
+
+Install dependencies with:
+
+```bash
+pip install torch torchvision matplotlib
+```
+
+## Files
+
+- `main.py`: Main training script (the code you provided)
+- CIFAR-10 dataset is automatically downloaded via `torchvision.datasets`
+
+## How to Run
+
+1. Clone this repository or copy the code into `cifar10(orth+He)-VGG.py`.
+
+2. Run the training script:
+
+```bash
+python cifar10(orth+He)-VGG.py
+```
+
+3. After training, the script will display loss and accuracy plots.
+
+## Description of Key Components
+
+- **VGGLike(nn.Module)**: Custom CNN model similar to VGG with two convolutional blocks.
+- **custom_init(model)**: Applies He initialization to early layers and Orthogonal to deeper ones.
+- **train_model(model)**: Handles training, validation, and plotting metrics over epochs.
+
+---
+
+
+
+**DIRECTORY INFO-**
+```bash
+Final/cifar10(orth+He)-VGG.py
+```
+---
+
+
+
+
+**4.3 cifar10(orth+he).ipynb**
+
+
+---
+
+# CIFAR-10 Classification with Custom Initialization
+
+This project implements a deep 9-layer Convolutional Neural Network (CNN) using PyTorch to classify images from the CIFAR-10 dataset. It combines **He initialization for shallow layers** and **Orthogonal initialization with ReLU gain for deeper layers** to optimize training performance. The model is trained with data augmentation, batch normalization, dropout, and a cosine annealing learning rate scheduler.
+
+## Features
+
+- Custom hybrid initialization (He + Orthogonal with gain)
+- 9-layer CNN architecture with BatchNorm, ReLU, and Dropout
+- Cosine annealing learning rate scheduler
+- Real-time plotting of training/validation accuracy and loss
+- GPU support with CUDA
+
+## Dataset
+
+[CIFAR-10](https://www.cs.toronto.edu/~kriz/cifar.html): 60,000 32x32 color images in 10 classes, with 6,000 images per class.
+
+## Prerequisites
+
+Make sure you have the following installed:
+
+```bash
+pip install torch torchvision matplotlib
+```
+
+## How to Run
+
+1. Clone the repository or copy the code to a Python file (e.g., `cifar10(orth+He)-VGG.py`).
+
+2. Run the script:
+
+```bash
+python cifar10(orth+He)-VGG.py
+```
+
+3. The model will begin training for 50 epochs, and after completion, it will show loss and accuracy plots for training and validation data.
+
+## Notes
+
+- The training is performed on GPU if available.
+- Model uses data augmentation (random crop and horizontal flip).
+- Uses Cosine Annealing LR scheduling for smooth convergence.
+- Default learning rate: `0.001`, Batch size: `128`, Epochs: `50`.
+
+---
+
+**DIRECTORY INFO-**
+```bash
+Final/cifar10(orth+he).ipynb
+```
+---
+
 
 
 
