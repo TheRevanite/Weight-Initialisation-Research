@@ -4,6 +4,64 @@
 *Instructions to run all files*
 
 # Initial Research
+
+**1.1 LSUV.ipynb**
+
+
+---
+
+# CIFAR-10 Classification using 9-Layer CNN with LSUV Initialization
+
+This project implements a 9-layer Convolutional Neural Network (CNN) for image classification on the CIFAR-10 dataset using PyTorch. It uses **LSUV (Layer-sequential unit-variance)** initialization combined with orthogonal weight initialization to stabilize training.
+
+## Features
+
+- Custom 9-layer CNN architecture
+- LSUV initialization for better convergence
+- Batch Normalization and Dropout for regularization
+- Cosine Annealing Learning Rate Scheduler
+- Accuracy and loss visualization
+
+## Requirements
+
+- Python 3.7+
+- PyTorch
+- torchvision
+- matplotlib
+
+Install dependencies using:
+
+```bash
+pip install torch torchvision matplotlib
+```
+
+## Dataset
+
+The CIFAR-10 dataset will be automatically downloaded via `torchvision.datasets`.
+
+## Steps to Run
+
+1. Clone this repository or copy the script into a `.py` file.
+2. Make sure your environment supports CUDA (optional for GPU acceleration).
+3. Run the training script:
+
+```bash
+python LSUV.ipynb
+```
+
+4. After training, loss and accuracy graphs for both training and validation sets will be displayed.
+
+## Notes
+
+- LSUV initialization uses a single batch from the training data to normalize activations to unit variance.
+- Training is performed for 50 epochs using Adam optimizer and cosine annealing scheduling.
+- Batch size is set to 64.
+
+--- 
+**DIRECTORY INFO-**
+```bash
+Initial Research/LSUV.ipynb
+```
 *1.2 Xavier-CNN-Cifar10.ipynb*
 Description to Run the Code:
 This script trains a custom 9-layer CNN on the CIFAR-10 dataset using PyTorch. It uses Xavier initialization, ReLU activations, and Adam optimizer. After 10 epochs of training, it reports the final test accuracy.
